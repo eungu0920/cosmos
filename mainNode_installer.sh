@@ -47,8 +47,8 @@ simd init $MONIKER --chain-id $CHAIN_ID
 sleep 1
 echo done
 
-sed -i 's/timeout_commit = "10s"/timeout_commit = "800ms"/' $HOME/.simapp/config/config.toml
-echo "timeout_commit changed 10s to 800ms" && sleep 1
+sed -i 's/timeout_commit = "5s"/timeout_commit = "800ms"/' $HOME/.simapp/config/config.toml
+echo "timeout_commit changed 5s to 800ms" && sleep 1
 echo done
 
 echo "8. Creating service file..." && sleep 1

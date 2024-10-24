@@ -47,19 +47,19 @@ sleep 1
 echo done
 
 echo "6. Downloading genesis..." && sleep 1
-wget -O $HOME/.simapp/config/genesis.json https://github.com/eungu0920....
+wget -O $HOME/.simapp/config/genesis.json https://raw.githubusercontent.com/eungu0920/cosmos/refs/heads/main/genesis.json
 sleep 1
 echo done
 
 echo "7. Adding seeds, peers" && sleep 1
-SEEDS=""
-PEERS=""
+SEEDS="bdca8f70a5302014ebafa3dbf172dec6f7ff3302@38.242.146.248:26656"
+PEERS="bdca8f70a5302014ebafa3dbf172dec6f7ff3302@38.242.146.248:26656"
 sed -i -e "/^\[p2p\]/,/^\[/{s/^[[:space:]]*seeds *=.*/seeds = \"$SEEDS\"/}" \
 -e "/^\[p2p\]/,/^\[/{s/^[[:space:]]*persistent_peers *=.*/persistent_peers = \"$PEERS\"/}" \
 $HOME/.simapp/config/config.toml
 
-sed -i 's/timeout_commit = "10s"/timeout_commit = "800ms"/' $HOME/.simapp/config/config.toml
-echo "timeout_commit changed 10s to 800ms" && sleep 1
+sed -i 's/timeout_commit = "5s"/timeout_commit = "800ms"/' $HOME/.simapp/config/config.toml
+echo "timeout_commit changed 5s to 800ms" && sleep 1
 echo done
 
 echo "8. Creating service file..." && sleep 1
