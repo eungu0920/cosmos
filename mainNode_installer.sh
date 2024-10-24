@@ -19,7 +19,6 @@ echo "2. Installing dependencies..." && sleep 1
 sudo apt-get install curl git jq wget build-essential -y
 
 echo "3. Install go..."
-
 cd $HOME
 VERSION="1.22.2"
 wget "https://golang.org/dl/go$VERSION.linux-amd64.tar.gz"
@@ -35,7 +34,7 @@ echo $(go version) && sleep 1
 echo "4. Installing binary..." && sleep 1
 cd $HOME
 sudo rm -rf cosmos-sdk
-git clone https://github.com/cosmos/cosmos-sdk
+wget "https://github.com/cosmos/cosmos-sdk"
 cd cosmos-sdk
 git checkout v0.50.10
 make install
