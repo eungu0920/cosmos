@@ -33,7 +33,7 @@ echo $(go version) && sleep 1
 echo "4. Installing binary..." && sleep 1
 cd $HOME
 sudo rm -rf cosmos-sdk
-wget "https://github.com/cosmos/cosmos-sdk"
+git clone https://github.com/cosmos/cosmos-sdk
 cd cosmos-sdk
 git checkout v0.50.10
 make install
