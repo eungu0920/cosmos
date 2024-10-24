@@ -18,10 +18,9 @@ echo "2. Installing dependencies..." && sleep 1
 sudo apt-get install curl git jq wget build-essential -y
 
 echo "3. Install go..."
-
 cd $HOME
 VERSION="1.22.2"
-wget "https://go.dev/dl/go$VERSION.linux-amd64.tar.gz"
+wget "https://golang.org/dl/go$VERSION.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
 sudo tar -C /usr/local -xzf "go$VERSION.linux-amd64.tar.gz"
 [ ! -f ~/.bash_profile ] && touch ~/.bash_profile
