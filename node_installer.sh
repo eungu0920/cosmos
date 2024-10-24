@@ -40,9 +40,8 @@ make install
 echo $(simd version) && sleep 1
 
 echo "5. Configuring and init app..." && sleep 1
-simd config node tcp://localhost:26657
-simd config keyring-backend test
-simd config chain-id $CHAIN_ID
+sed -i -e "s/^chain-id *=.*/chain-id = \"$CHAIN_ID\"/" $HOME/.simapp/config/client.toml
+sed -i 's/keyring-backend = "os"/keyring-backend = "test"/' $HOME/.simapp/config/client.toml
 simd init $MONIKER --chain-id $CHAIN_ID
 sleep 1
 echo done
